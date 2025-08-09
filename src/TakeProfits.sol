@@ -20,11 +20,6 @@ import {BalanceDelta} from "v4-core/types/BalanceDelta.sol";
 import {BaseHook} from "v4-periphery/src/utils/BaseHook.sol";
 
 contract TakeProfits is BaseHook, ERC1155 {
-    // StateLibrary is new here and we haven't seen that before
-    // It's used to add helper functions to the PoolManager to read
-    // storage values.
-    // In this case, we use it for accessing `currentTick` values
-    // from the pool manager
     using StateLibrary for IPoolManager;
 
     error InvalidOrder();
