@@ -226,7 +226,7 @@ contract LimitOrderBookTest is Test, Deployers, ERC1155Holder {
         uint160 flags = uint160(Hooks.AFTER_INITIALIZE_FLAG) | uint160(Hooks.AFTER_SWAP_FLAG);
 
         string memory uri = "https://test.api.com";
-        deployCodeTo("LimitOrderBook.sol", abi.encode(manager, uri), address(flags));
+        deployCodeTo("TakeProfits.sol", abi.encode(manager, uri), address(flags));
 
         hook = TakeProfits(address(flags));
     }
